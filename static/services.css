@@ -1,0 +1,560 @@
+/* ===========================  SERVICES SECTION  =========================== */
+.services-section {
+    padding: var(--section-padding);
+    background: var(--white);
+}
+
+.services-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px;
+}
+
+.section-label {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--secondary);
+    margin-bottom: 16px;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 42px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.section-description {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 12px;
+    border-left: 4px solid var(--secondary);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.03), rgba(52, 152, 219, 0.08));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    border-left-color: var(--accent);
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--secondary), #5DADE2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    transition: all 0.4s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.service-card:hover .service-icon {
+    transform: rotate(360deg) scale(1.1);
+    background: linear-gradient(135deg, var(--accent), #EC7063);
+}
+
+.service-icon i {
+    font-size: 36px;
+    color: var(--white);
+}
+
+.service-title {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.service-description {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.service-features {
+    list-style: none;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.service-features li {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.service-features li i {
+    color: var(--secondary);
+    font-size: 12px;
+}
+
+.service-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.service-link:hover {
+    gap: 12px;
+    color: var(--accent);
+}
+
+.service-link i {
+    font-size: 12px;
+}
+
+/* ===========================
+   COMPARISON SECTION
+   =========================== */
+.comparison-section {
+    padding: 100px 0;
+    background: var(--light-bg);
+}
+
+.comparison-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.comparison-item {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.comparison-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--secondary), #5DADE2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.comparison-icon i {
+    font-size: 28px;
+    color: var(--white);
+}
+
+.comparison-item h4 {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.comparison-item p {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* ===========================
+   CTA SECTION
+   =========================== */
+.services-cta {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--primary), #34495E);
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-family: var(--font-heading);
+    font-size: 42px;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.cta-subtitle {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-cta-primary {
+    padding: 18px 40px;
+    background: var(--white);
+    color: var(--primary);
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 15px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-cta-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+.btn-cta-secondary {
+    padding: 18px 40px;
+    background: transparent;
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 6px;
+    border: 2px solid var(--white);
+    font-weight: 600;
+    font-size: 15px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-cta-secondary:hover {
+    background: var(--white);
+    color: var(--primary);
+    transform: translateY(-3px);
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+.footer {
+    background: var(--primary);
+    color: var(--white);
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.footer-brand i {
+    font-size: 26px;
+    color: var(--secondary);
+}
+
+.footer-links {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    background: var(--secondary);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+/* =========================== RESPONSIVE DESIGN =========================== */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 30px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .comparison-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .page-title {
+        font-size: 44px;
+    }
+
+    .section-title {
+        font-size: 36px;
+    }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 80px 0;
+    }
+
+    .container {
+        padding: 0 20px;
+    }
+
+    .nav-container {
+        padding: 15px 20px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: var(--white);
+        width: 100%;
+        text-align: center;
+        transition: left 0.3s ease;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 30px 0;
+        gap: 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li {
+        margin: 15px 0;
+    }
+
+    .nav-auth {
+        position: fixed;
+        left: -100%;
+        top: calc(70px + 220px);
+        flex-direction: column;
+        background: var(--white);
+        width: 100%;
+        text-align: center;
+        transition: left 0.3s ease;
+        padding: 20px 0 30px;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-auth.active {
+        left: 0;
+    }
+
+    .page-hero {
+        height: 400px;
+        background-attachment: scroll;
+    }
+
+    .page-title {
+        font-size: 32px;
+    }
+
+    .page-subtitle {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .service-card {
+        padding: 30px 25px;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cta-title {
+        font-size: 32px;
+    }
+
+    .cta-subtitle {
+        font-size: 16px;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-cta-primary,
+    .btn-cta-secondary {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 28px;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+
+    .service-card {
+        padding: 25px 20px;
+    }
+
+    .service-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .service-icon i {
+        font-size: 30px;
+    }
+
+    .service-title {
+        font-size: 20px;
+    }
+
+    .cta-title {
+        font-size: 26px;
+    }
+
+    .btn-cta-primary,
+    .btn-cta-secondary {
+        padding: 15px 30px;
+        font-size: 14px;
+    }
+}

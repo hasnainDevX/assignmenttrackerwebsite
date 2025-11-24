@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Assignment Tracker</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-clipboard-list"></i>
+                <span>Assignment Tracker</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}" class="active">About</a></li>
+                <li><a href="{{ url_for('services') }}">Services</a></li>
+                <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+            <div class="nav-auth">
+                <a href="{{ url_for('login') }}" class="btn-login">Login</a>
+                <a href="{{ url_for('register') }}" class="btn-register">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="page-hero">
+        <div class="hero-overlay">
+            <div class="container">
+                <span class="hero-label">About Us</span>
+                <h1 class="page-title">Empowering Students Through<br>Elegant Organization</h1>
+                <p class="page-subtitle">Crafted with care for the modern student who values simplicity and efficiency</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission">
+        <div class="container">
+            <div class="mission-grid">
+                <div class="mission-image">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="Students collaborating">
+                    <div class="image-decoration"></div>
+                </div>
+                <div class="mission-content">
+                    <span class="section-label">Our Mission</span>
+                    <h2 class="section-title">Creating Calm in Academic Chaos</h2>
+                    <p class="section-text">
+                        We believe every student deserves tools that bring clarity, not complexity. 
+                        Assignment Tracker was born from the simple idea that organization should be 
+                        beautiful, intuitive, and stress-free.
+                    </p>
+                    <p class="section-text">
+                        Our mission is to help students reclaim their time, reduce anxiety around deadlines, 
+                        and focus on what truly matters—learning and growth.
+                    </p>
+                    <div class="mission-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">10K+</span>
+                            <span class="stat-label">Active Students</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">98%</span>
+                            <span class="stat-label">Success Rate</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50K+</span>
+                            <span class="stat-label">Tasks Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values">
+        <div class="container">
+            <div class="values-header">
+                <span class="section-label">Our Values</span>
+                <h2 class="section-title">What We Stand For</h2>
+            </div>
+            <div class="values-grid">
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="value-title">Student-Centered</h3>
+                    <p class="value-description">
+                        Every feature is designed with students in mind, prioritizing ease of use and genuine value.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="value-title">Elegance</h3>
+                    <p class="value-description">
+                        We believe organization tools should be as beautiful as they are functional.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="value-title">Simplicity</h3>
+                    <p class="value-description">
+                        Less is more. We strip away complexity to reveal what truly matters.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="value-title">Trust</h3>
+                    <p class="value-description">
+                        Your academic data is private and secure, always handled with care.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote-content">
+                <i class="fas fa-quote-left quote-icon"></i>
+                <blockquote class="quote-text">
+                    "Great organization is invisible. You shouldn't notice the system—only the results."
+                </blockquote>
+                <p class="quote-author">— Assignment Tracker Philosophy</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="about-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Join Our Community</h2>
+                <p class="cta-subtitle">Experience the difference that elegant organization can make</p>
+                <a href="{{ url_for('register') }}" class="btn-cta">Get Started Free</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Assignment Tracker</span>
+                </div>
+                <div class="footer-links">
+                    <a href="{{ url_for('about') }}">About</a>
+                    <a href="{{ url_for('services') }}">Services</a>
+                    <a href="{{ url_for('contact') }}">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Assignment Tracker. All rights reserved Hasnain BSE-304.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

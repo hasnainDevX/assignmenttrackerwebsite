@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Assignment Tracker</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='services.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-clipboard-list"></i>
+                <span>Assignment Tracker</span>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('services') }}" class="active">Services</a></li>
+                <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+            <div class="nav-auth">
+                <a href="{{ url_for('login') }}" class="btn-login">Login</a>
+                <a href="{{ url_for('register') }}" class="btn-register">Sign Up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="page-hero">
+        <div class="hero-overlay">
+            <div class="container">
+                <span class="hero-label">Our Services</span>
+                <h1 class="page-title">Everything You Need to<br>Excel Academically</h1>
+                <p class="page-subtitle">Comprehensive tools designed to keep you organized, focused, and ahead of deadlines</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="services-header">
+                <span class="section-label">What We Offer</span>
+                <h2 class="section-title">Powerful Features for Students</h2>
+                <p class="section-description">
+                    From tracking assignments to analyzing your progress, we provide all the tools you need in one elegant platform
+                </p>
+            </div>
+
+            <div class="services-grid">
+                
+                <!-- Service Card 1 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="service-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="service-title">Assignment Management</h3>
+                    <p class="service-description">
+                        Keep all your assignments organized in one central hub. Set deadlines, mark priorities, and track completion status effortlessly.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Priority marking system</li>
+                        <li><i class="fas fa-check"></i> Deadline tracking</li>
+                        <li><i class="fas fa-check"></i> Progress indicators</li>
+                    </ul>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3 class="service-title">Smart Reminders</h3>
+                    <p class="service-description">
+                        Never miss a deadline again with intelligent notifications. Get timely alerts for upcoming assignments and quizzes.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Email notifications</li>
+                        <li><i class="fas fa-check"></i> Dashboard alerts</li>
+                        <li><i class="fas fa-check"></i> Custom reminder settings</li>
+                    </ul>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+
+                <!-- Service Card 3 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="service-title">Mobile Friendly</h3>
+                    <p class="service-description">
+                        Access your assignments anywhere, anytime. Our responsive design ensures a seamless experience on all devices.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Fully responsive</li>
+                        <li><i class="fas fa-check"></i> Cross-platform sync</li>
+                        <li><i class="fas fa-check"></i> Offline access</li>
+                    </ul>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Comparison Section -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="comparison-header">
+                <span class="section-label">Why Choose Us</span>
+                <h2 class="section-title">The Complete Solution</h2>
+            </div>
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <div class="comparison-icon">
+                        <i class="fas fa-infinity"></i>
+                    </div>
+                    <h4>Unlimited Assignments</h4>
+                    <p>Add as many assignments as you need</p>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h4>Cloud Storage</h4>
+                    <p>Your data is safe and accessible anywhere</p>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h4>Secure & Private</h4>
+                    <p>Your academic data stays confidential</p>
+                </div>
+                <div class="comparison-item">
+                    <div class="comparison-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Team Collaboration</h4>
+                    <p>Share and coordinate group projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="services-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Transform Your Study Routine?</h2>
+                <p class="cta-subtitle">Join thousands of students who've taken control of their academic life</p>
+                <div class="cta-buttons">
+                    <a href="{{ url_for('register') }}" class="btn-cta-primary">Get Started Free</a>
+                    <a href="{{ url_for('contact') }}" class="btn-cta-secondary">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span>Assignment Tracker</span>
+                </div>
+                <div class="footer-links">
+                    <a href="{{ url_for('about') }}">About</a>
+                    <a href="{{ url_for('services') }}">Services</a>
+                    <a href="{{ url_for('contact') }}">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Assignment Tracker. Hasnain BSE-304</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

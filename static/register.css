@@ -1,0 +1,93 @@
+/* =========================== AUTH FORM =========================== */
+.login-section, .register-section {
+  padding: var(--section-padding);
+  background-color: var(--light-bg);
+}
+
+.auth-form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--white);
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.auth-form .form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form label {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--primary);
+}
+
+.auth-form input {
+  padding: 12px 15px;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.auth-form input:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.2);
+}
+
+.btn-submit {
+  display: inline-block;
+  padding: 15px 30px;
+  background: var(--secondary);
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+}
+
+.auth-link {
+  margin-top: 15px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.auth-link a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .auth-form {
+    padding: 30px 20px;
+  }
+}
+
+.registerlogin-title {
+  font-family: var(--font-heading);
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--primary);
+  margin-bottom: 24px;
+  text-align: center;
+}

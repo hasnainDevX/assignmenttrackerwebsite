@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery - Assignment Tracker</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Main CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='gallery.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <i class="fas fa-clipboard-list"></i>
+          <span>Assignment Tracker</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li><a href="{{ url_for('services') }}">Services</a></li>
+          <li><a href="{{ url_for('gallery') }}" class="active">Gallery</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+        <div class="nav-auth">
+          <a href="{{ url_for('login') }}" class="btn-login">Login</a>
+          <a href="{{ url_for('register') }}" class="btn-register">Sign Up</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="page-hero">
+      <div class="hero-overlay">
+        <div class="container">
+          <span class="hero-label">Gallery</span>
+          <h1 class="page-title">A Visual Journey Through Our Features</h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+      <div class="container">
+        <div class="grid">
+          <div class="item">
+            <div class="image">
+              <img
+                src="/static/assets/galleryimg1.avif"
+                alt="Centralized Dashboard"
+              />
+            </div>
+            <div class="textpart">
+              <h3>Centralized Dashboard</h3>
+              <p>
+                View all your assignments in one place, eliminating the need to
+                check multiple platforms.
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="image">
+              <img
+                src="/static/assets/galleryimage2.avif"
+                alt="Color-Coded Priorities"
+              />
+            </div>
+            <div class="textpart">
+              <h3>Color-Coded Priorities</h3>
+              <p>
+                Quickly see which tasks need attention first with visually
+                intuitive urgency levels.
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="image">
+              <img
+                src="/static/assets/galleryimage3.jpg"
+                alt="Filter by Course or Deadline"
+              />
+            </div>
+            <div class="textpart">
+              <h3>Filter By Course or Deadline</h3>
+              <p>
+                Easily sort and filter assignments to focus on what’s due
+                soonest or by subject.
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <div class="image">
+              <img
+                src="/static/assets/galleryimage4.avif"
+                alt="Collaborate With Classmates"
+              />
+            </div>
+            <div class="textpart">
+              <h3>Collaborate With Classmates</h3>
+              <p>
+                Share assignments and deadlines with your class to stay
+                organized as a group.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <i class="fas fa-clipboard-list"></i>
+            <span>Assignment Tracker</span>
+          </div>
+          <div class="footer-links">
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('services') }}">Services</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+          </div>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Assignment Tracker. All rights reserved Hasnain BSE-304.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

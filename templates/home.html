@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment Tracker - Never Miss a Deadline</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Main CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='home.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <i class="fas fa-clipboard-list"></i>
+          <span>Assignment Tracker</span>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li><a href="{{ url_for('services') }}">Services</a></li>
+          <li><a href="{{ url_for('gallery') }}">Gallery</a></li>
+          <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+        <div class="nav-auth">
+          <a href="{{ url_for('login') }}" class="btn-login">Login</a>
+          <a href="{{ url_for('register') }}" class="btn-register">Sign Up</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Never Miss a Deadline Again</h1>
+        <p class="hero-subtitle">
+          Elegant assignment tracking for ambitious students. Stay organized,
+          reduce stress, and achieve academic excellence.
+        </p>
+        <div class="hero-buttons">
+          <a href="{{ url_for('register') }}" class="btn-primary"
+            >Get Started</a
+          >
+          <a href="{{ url_for('about') }}" class="btn-secondary">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&q=80"
+          alt="Student studying"
+        />
+      </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="welcome">
+      <div class="container">
+        <div class="welcome-content">
+          <span class="welcome-label">Welcome</span>
+          <h2 class="section-title">Your Academic Success Companion</h2>
+          <p class="section-description">
+            Assignment Tracker is designed for students who value organization
+            and excellence. Keep track of all your coursework, deadlines, and
+            priorities in one beautifully simple place.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Cards -->
+    <section class="features">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-tasks"></i>
+            </div>
+            <h3 class="feature-title">Track Assignments</h3>
+            <p class="feature-description">
+              Organize all your assignments, projects, and exams in one central
+              dashboard with intuitive categorization.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-bell"></i>
+            </div>
+            <h3 class="feature-title">Smart Reminders</h3>
+            <p class="feature-description">
+              Never forget important deadlines with intelligent notifications
+              that keep you ahead of schedule.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h3 class="feature-title">Stay Organized</h3>
+            <p class="feature-description">
+              Prioritize tasks, manage your time effectively, and maintain a
+              clear overview of your academic journey.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Assignment Tracker App Section -->
+    <section class="tracker-section">
+      <div class="tracker-container">
+        <!-- Header -->
+        <div class="tracker-header">
+          <h2>My Assignment Tracker</h2>
+          <p>Organize your assignments, never miss a deadline</p>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="tracker-stats">
+          <div class="stat-card">
+            <div class="stat-icon total">
+              <i class="fas fa-clipboard-list"></i>
+            </div>
+            <div class="stat-info">
+              <h4>Total Assignments</h4>
+              <p id="stat-total">0</p>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon pending">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="stat-info">
+              <h4>Pending</h4>
+              <p id="stat-pending">0</p>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon completed">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="stat-info">
+              <h4>Completed</h4>
+              <p id="stat-completed">0</p>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon overdue">
+              <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="stat-info">
+              <h4>Overdue</h4>
+              <p id="stat-overdue">0</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Tracker Area -->
+        <div class="tracker-main">
+          <!-- Add Assignment Form -->
+          <div class="tracker-form-card">
+            <h3><i class="fas fa-plus-circle"></i> Add New Assignment</h3>
+            <form id="assignment-form">
+              <div class="form-group">
+                <label for="title">Assignment Title</label>
+                <input
+                  type="text"
+                  id="title"
+                  placeholder="e.g., Math Homework Chapter 5"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" required>
+                  <option value="">Select Subject</option>
+                  <option value="Mathematics">Mathematics</option>
+                  <option value="Physics">Physics</option>
+                  <option value="Chemistry">Chemistry</option>
+                  <option value="Biology">Biology</option>
+                  <option value="Computer Science">Computer Science</option>
+                  <option value="English">English</option>
+                  <option value="History">History</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="deadline">Deadline</label>
+                <input type="date" id="deadline" required />
+              </div>
+
+              <div class="form-group">
+                <label for="priority">Priority Level</label>
+                <select id="priority" required>
+                  <option value="low">Low Priority</option>
+                  <option value="medium" selected>Medium Priority</option>
+                  <option value="high">High Priority</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="description">Description (Optional)</label>
+                <textarea
+                  id="description"
+                  placeholder="Add notes or details about this assignment..."
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn-add-assignment">
+                <i class="fas fa-plus"></i> Add Assignment
+              </button>
+            </form>
+          </div>
+
+          <!-- Assignments List -->
+          <div class="tracker-assignments">
+            <!-- Filter Tabs -->
+            <div class="tracker-filters">
+              <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="pending">Pending</button>
+              <button class="filter-btn" data-filter="completed">
+                Completed
+              </button>
+              <button class="filter-btn" data-filter="overdue">Overdue</button>
+            </div>
+
+            <!-- Assignments List -->
+            <div class="assignments-list" id="assignments-list">
+              <!-- Empty State (shows when no assignments) -->
+              <div class="empty-state" id="empty-state">
+                <i class="fas fa-inbox"></i>
+                <h3>No Assignments Yet</h3>
+                <p>Add your first assignment to get started!</p>
+              </div>
+
+              <!-- Assignment cards will be added here dynamically -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2 class="cta-title">Ready to Transform Your Study Routine?</h2>
+          <p class="cta-subtitle">
+            Join thousands of students who never miss a deadline.
+          </p>
+          <a href="{{ url_for('register') }}" class="btn-cta"
+            >Start Tracking Today</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <i class="fas fa-clipboard-list"></i>
+            <span>Assignment Tracker</span>
+          </div>
+          <div class="footer-links">
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('services') }}">Services</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+          </div>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Assignment Tracker. All rights reserved Hasnain BSE-304.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

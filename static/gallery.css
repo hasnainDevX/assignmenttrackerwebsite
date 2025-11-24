@@ -1,0 +1,33 @@
+
+/* =========================== GALLERY STYLES =========================== */
+.gallery {
+  padding: var(--section-padding);
+  background-color: var(--light-bg);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 80px;
+  align-items: center;
+  max-width: var(--container-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.image {
+    overflow: hidden;
+    inset: 0;
+}
+.grid img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+  transition: all 0.3s ease;
+  height: 300px;
+
+}
+.grid img:hover {
+  transform: scale(1.05);
+}
